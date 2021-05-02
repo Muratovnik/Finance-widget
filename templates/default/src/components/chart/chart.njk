@@ -1,0 +1,10 @@
+{% macro chart(BEMElemClass, signature, percents) %}
+    <div class="chart {{ BEMElemClass }} js-chart">
+        <svg viewbox="0 0 42 42" class="chart__graphic">
+            <circle class="chart__graphic-bg" cx="21" cy="21" r="13.7" fill="transparent" stroke-width="4.5"></circle>
+            <circle class="chart__graphic-percents js-chart__graphic-percents" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke-width="9" stroke-dasharray="0 100" stroke-dashoffset="25"></circle>
+        </svg>
+        <span class="chart__percents js-chart__percents">{{ percents }}%</span>
+        <span class="chart__signature">{{ signature }}</span>
+    </div>
+{% endmacro %}

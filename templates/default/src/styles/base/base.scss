@@ -1,0 +1,115 @@
+body {
+	color: $color-txt-main;
+	font-family: var(--font-main);
+	@include font(16px, 19px, 400);
+
+	background-color: #f2f2f2;
+
+	// Улучшаем рендеринг шрифтов на маках
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// *** Доступное сокрытие ***
+.visually-hidden {
+	position: absolute !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(100%) !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	text-indent: -9999px !important;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	user-select: none !important;
+}
+
+// * Читска нативных отступов у списков *
+.clean-list {
+	margin: {
+		top: 0;
+		bottom: 0;
+	}
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.layout {
+	display: flex;
+	width: 100%;
+
+	&__left-column {
+		width: 220px;
+		flex-shrink: 0;
+		margin-right: 17px;
+
+		padding: 12px 10px;
+	}
+
+	&__content {
+		flex-grow: 1;
+		min-width: 0;
+	}
+
+	&__sticky {
+		position: sticky;
+		top: 60px;
+		height: calc(100vh - 60px);
+	}
+}
+
+.main {
+	position: relative;
+
+	flex: 1;
+}
+
+.header {
+	--color-background: #feebef;
+
+	content: "";
+
+	height: 60px;
+	width: 100%;
+
+	background-color: var(--color-background);
+}
+
+.page-wrapper {
+	--padding: 16px;
+	min-height: calc(100vh - 60px);
+
+	max-width: 640px;
+	padding: {
+		top: var(--padding);
+		bottom: var(--padding);
+	}
+	margin: 0 auto;
+
+	background-color: transparent;
+}
+
+
+.btn {
+	padding: 13px 40px;
+
+	color: $color-accent-txt;
+	@include font(16px, 1.2, 500);
+
+	border-radius: 5px;
+
+	background-color: $color-accent-main;
+	outline: none;
+	border: none;
+}
+
+.padding-h {
+	padding: {
+		left: 16px;
+		right: 16px;
+	};
+}

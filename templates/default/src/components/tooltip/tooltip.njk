@@ -1,0 +1,6 @@
+{% macro tooltip(BEMElemClass, tooltipContent) %}
+    <span class="tooltip {{ BEMElemClass }} js-tooltip">
+        <i class="tooltip__icon">?</i>
+        <span class="tooltip__content js-tooltip__content">{{ tooltipContent | safe }}</span>
+    </span>
+{% endmacro %}

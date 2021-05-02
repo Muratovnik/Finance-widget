@@ -1,0 +1,7 @@
+{% macro customRange(min = "0", max = "50 000", bemParent) %}
+    <div class="custom-range {{ bemParent }}__custom-range js-{{ bemParent }}__custom-range">
+        <span class="custom-range__number js-custom-range__min">{{ min }} ₽</span>
+        <div class="custom-range__slider js-custom-range__slider"></div>
+        <span class="custom-range__number js-custom-range__max">{{ max }} ₽</span>
+    </div>
+{% endmacro %}

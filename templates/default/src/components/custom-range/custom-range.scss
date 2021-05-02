@@ -1,0 +1,15 @@
+.custom-range {
+    display: flex;
+    align-items: center;
+
+    &__slider {
+        flex-grow: 1;
+        margin: 0 18px;
+        
+    }
+
+    &__number {
+        @include font(18px, 21px, 500);
+    }
+}
+  

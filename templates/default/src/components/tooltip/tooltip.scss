@@ -1,0 +1,35 @@
+.tooltip {
+    display: inline-block;
+
+    transition: all 0.2s ease-in;
+    &__icon {
+        --size: 20px;
+
+        display: inline-grid;
+        place-items: center;
+
+        width: var(--size);
+        height: var(--size);
+
+        border-radius: 50%;
+        background-color: $color-primary;
+
+        color: $color-accent-main;
+        font-style: normal;
+        @include font(13px, 1);
+
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+    }
+
+    & &__content {
+        display: none;
+    }
+
+    &[aria-expanded = "true"] &{
+        &__icon {
+            color: $color-accent-txt;
+            background-color: $color-accent-main;
+        }
+    }
+}

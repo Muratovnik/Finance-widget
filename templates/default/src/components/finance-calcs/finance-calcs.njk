@@ -1,0 +1,15 @@
+{% from "../tooltip/tooltip.njk" import tooltip %}
+{% macro financeCalcs(BEMElemClass, calcCondition, tooltipContent, isTo = false) %}
+    <div class="finance-calcs {{ BEMElemClass }} js-finance-calcs">
+        <div class="finance-calcs__coins js-finance-calcs__coins">
+            <div class="finance-calcs__coin js-finance-calcs__coin"></div>
+        </div>
+        <span class="finance-calcs__total">{% if isTo %}до {% endif %}~<span class="js-finance-calcs__total">0</span> ₽</span>
+        <div class="finance-calcs__condition">
+            <span>{{ calcCondition }}</span>
+            {% if tooltipContent %}
+                {{ tooltip(BEMElemClass = "finance-calcs__tooltip", tooltipContent = tooltipContent) }}
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}

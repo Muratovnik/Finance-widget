@@ -1,0 +1,39 @@
+.tippy-box {
+    display: block;
+
+    color: $color-txt-invert;
+    @include font(14px, 18px, 500);
+
+    box-shadow: 0px 9px 10px rgba(254, 77, 74, 0.1);
+    border-radius: 5px;
+
+    .tippy-content {
+        padding: 13px 18px 16px;
+    }
+
+    &[data-theme~="red"] {
+        color: #fff;
+        box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15), 0 4px 80px -8px rgba(36, 40, 47, 0.25),
+            0 4px 4px -2px rgba(91, 94, 105, 0.15);
+        background-color: rgba($color-accent-main, 0.9);
+
+        &[data-placement^="top"] > .tippy-arrow:before {
+            border-top-color: rgba($color-accent-main, 0.9);
+        }
+        &[data-placement^="bottom"] > .tippy-arrow:before {
+            border-bottom-color: rgba($color-accent-main, 0.9);
+        }
+        &[data-placement^="left"] > .tippy-arrow:before {
+            border-left-color: rgba($color-accent-main, 0.9);
+        }
+        &[data-placement^="right"] > .tippy-arrow:before {
+            border-right-color: rgba($color-accent-main, 0.9);
+        }
+        &[data-theme~="red"] > .tippy-backdrop {
+            background-color: rgba($color-accent-main, 0.9);
+        }
+        &[data-theme~="red"] > .tippy-svg-arrow {
+            fill: rgba($color-accent-main, 0.9);
+        }
+    }
+}

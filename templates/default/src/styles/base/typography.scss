@@ -1,0 +1,12 @@
+h2 {
+    margin: {
+        top: 9px;
+        bottom: 7px;
+    }
+
+    @include font(22px, 1.3em, 500);
+}
+
+.h2 {
+    @extend h2;
+}

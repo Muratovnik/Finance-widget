@@ -1,0 +1,103 @@
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.noUi {
+    $height: 9px;
+
+    &-horizontal {
+        height: $height;
+    }
+
+    &-horizontal &{
+        &-handle {
+            --size: 25px;
+
+            top: calc((#{$height} + 1px) * -1);
+
+            width: var(--size);
+            height: var(--size);
+
+            background-color: $color-accent-main;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+            outline: none;
+            border: none;
+            box-shadow: none;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                --size: 9px;
+
+                content: "";
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                width: var(--size);
+                height: var(--size);
+
+                border-radius: 50%;
+
+                background-color: #fff;
+            }
+        }
+
+        &-tooltip {
+            left: 25%;
+            bottom: 135%;
+            
+            display: none;
+            padding: 4px 7px;
+    
+            color: $color-txt-invert;
+            @include font(16px, 19px, 500);
+
+            background-color: $color-accent-main;
+            border-radius: 5px;
+            border: none;
+            box-shadow: none;
+    
+            &::after {
+                content: "";
+    
+                position: absolute;
+                bottom: -4px;
+                left: 53.5%;
+    
+                width: 7px;
+                height: 7px;
+        
+                background-color: $color-accent-main;
+                transform: rotate(-45deg);
+            }
+
+            &.active {
+                display: block;
+                animation-name: show;
+                animation-duration: 0.3s;
+            }
+        }
+    }
+
+    &-connects {
+        background-color: $color-accent-no;
+        border-radius: 8px;
+        box-shadow: none;
+    }
+    &-connect {
+        background: linear-gradient(90deg, #FF9796 4.65%, $color-accent-main 101.3%);
+    }
+}
+
+

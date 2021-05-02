@@ -1,0 +1,48 @@
+{% from "../../custom-range/custom-range.njk" import customRange %}
+{% from "../../finance-calcs/finance-calcs.njk" import financeCalcs %}
+{% from "../../chart/chart.njk" import chart %}
+
+<div class="finance-widget js-finance-widget">
+    <div class="finance-widget__block padding-h">
+        <div class="h2 js-finance-widget__title">Сколько денег вы откладываете в месяц?</div>
+
+        <div class="finance-widget__range-wrap js-finance-widget__range-wrap">
+            <span class="finance-widget__subtitle">Ответьте и узнаете, сколько копят другие.</span>
+            {{ customRange(min = "0", max = "50 000", bemParent = "finance-widget") }}
+        </div>
+
+        <div class="finance-widget__calculations js-finance-widget__calculations">
+            {{ financeCalcs(BEMElemClass = "finance-widget__calc-block", calcCondition = "если откладывать под матрас", tooltipContent = "В этом мало смысла — такие накопления «съедает» инфляция") }}
+            {{ financeCalcs(BEMElemClass = "finance-widget__calc-block", calcCondition = "если откладывать на депозит", tooltipContent = "Ставки по вкладам различны в разных банках и зависят от многих факторов, в частности, от ключевой ставки Центрального банка РФ<a target='_blank' href='https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#1' >¹</a>.") }}
+            {{ financeCalcs(isTo = true, BEMElemClass = "finance-widget__calc-block", calcCondition = "если инвестировать в ПИФ «Альфа-Капитала»", tooltipContent = "Вы становитесь инвестором набора компаний, который определяют профессиональные управляющие. Они решают, когда покупатьи продавать ценные бумаги, чтобы обеспечить инвестиционный доход. Купить или продать паи фонда можно в любой момент<a target='_blank' href='https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#2' >²</a>.") }}
+        </div>
+    </div>
+    <div class="finance-widget__hidden js-finance-widget__hidden">
+        <div class="finance-widget__block finance-widget__block--pink">
+            <div class="finance-widget__average padding-h js-finance-widget__average">
+                <div class="finance-widget__average-money">
+                    <div class="finance-widget__average-pic js-finance-widget__average-pic">
+                        <img src="images/finance-widget/money1.svg" alt="Деньги">
+                    </div>
+                    <span class="js-finance-widget__average-sum">~ 15 250 ₽</span>
+                </div>
+                <span class="finance-widget__average-title">в среднем откладывают читатели vc.ru</span>
+                <div class="finance-widget__charts">
+                    {{ chart(percents = "50", BEMElemClass = "finance-widget__chart", signature = "читателей откладывают больше 1000 ₽ в месяц") }}
+                    {{ chart(percents = "7", BEMElemClass = "finance-widget__chart", signature = "читателей откладывают больше 10 000 ₽ в месяц") }}
+                </div>
+            </div>
+            <div class="finance-widget__open-stat js-finance-widget__open-stat">
+                <span>А как в среднем у читателей vc.ru?</span>
+            </div>
+        </div>
+
+        <div class="finance-widget__block">
+            <div class="finance-widget__how-invest padding-h">
+                <span>Как начать инвестировать?</span>
+                <a href="https://alfabank.ru/make-money/investments/" class="btn">Узнать</a>
+            </div>
+        </div>
+    </div>
+
+</div>
