@@ -32,8 +32,8 @@
 		"gulp-sass-glob": "^1.0.9",
 		"gulp-sourcemaps": "^2.6.5",
 		"nouislider": "^14.7.0",
-		"webpack": "^4.29.6",
-		"webpack-stream": "^5.2.1"
+		"webpack": "^5.75.0",
+		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
 		"gulp-autoprefixer": "^7.0.1",
